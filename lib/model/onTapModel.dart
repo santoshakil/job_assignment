@@ -26,20 +26,21 @@ Widget alertDialog() {
                     "Shakil's Location: 23.788861, 90.375821\nYour Location: ${latlongController.text}"),
           ),
         ),
-        RaisedButton(
-          onPressed: () {
-            print(
-                "Name: ${myNameController.text}\n${latlongController.text}\n");
-            Fluttertoast.showToast(
-              msg: "Submitted to the Console",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-            );
-          },
-          child: Text('Submit'),
-        )
       ],
     ),
+    actions: [
+      new RaisedButton(
+        onPressed: () {
+          print("Name: ${myNameController.text}\n${latlongController.text}\n");
+          Fluttertoast.showToast(
+            msg: "Submitted to the Console",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+          );
+        },
+        child: Text('Submit'),
+      )
+    ],
   );
 }
 

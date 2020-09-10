@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'model/onTapModel.dart';
@@ -33,6 +34,7 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
       body: GoogleMap(
         onMapCreated: (controlle) {
@@ -68,6 +70,8 @@ class _MainState extends State<Main> {
               gravity: ToastGravity.BOTTOM,
             );
             showDialog(
+              barrierDismissible: true,
+              useRootNavigator: true,
               context: context,
               builder: (BuildContext contex) {
                 return alertDialog();
